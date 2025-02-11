@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import Box from '@mui/material/Box';
+import { Modal } from '@mui/material';
 import Card from '@mui/material/Card';
 import Table from '@mui/material/Table';
 import Button from '@mui/material/Button';
@@ -38,6 +39,12 @@ export function UserView() {
   });
 
   const notFound = !dataFiltered.length && !!filterName;
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  <Button onClick={handleOpen}>Open modal</Button>;
 
   return (
     <DashboardContent>
@@ -80,12 +87,11 @@ export function UserView() {
                   )
                 }
                 headLabel={[
-                  { id: 'name', label: 'Name' },
-                  { id: 'company', label: 'Company' },
-                  { id: 'role', label: 'Role' },
-                  { id: 'isVerified', label: 'Verified', align: 'center' },
-                  { id: 'status', label: 'Status' },
-                  { id: '' },
+                  { id: 'id', label: '  ID' },
+                  { id: 'item', label: 'Item' },
+                  { id: 'qty', label: 'Qty' },
+                  { id: 'uom', label: 'Uom' },
+                  { id: 'price', label: 'Price per qty' },
                 ]}
               />
               <TableBody>
@@ -124,6 +130,22 @@ export function UserView() {
           onRowsPerPageChange={table.onChangeRowsPerPage}
         />
       </Card>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </Box>
+      </Modal>
     </DashboardContent>
   );
 }
@@ -195,3 +217,15 @@ export function useTable() {
     onChangeRowsPerPage,
   };
 }
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};

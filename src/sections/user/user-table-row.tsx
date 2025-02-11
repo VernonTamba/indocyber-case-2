@@ -45,13 +45,13 @@ export function UserTableRow({ row, selected, onSelectRow }: UserTableRowProps) 
   return (
     <>
       <TableRow hover tabIndex={-1} role="checkbox" selected={selected}>
-        <TableCell padding="checkbox">
+        {/* <TableCell padding="checkbox">
           <Checkbox disableRipple checked={selected} onChange={onSelectRow} />
-        </TableCell>
+        </TableCell> */}
 
         <TableCell component="th" scope="row">
           <Box gap={2} display="flex" alignItems="center">
-            <Avatar alt={row.name} src={row.avatarUrl} />
+            {/* <Avatar alt={row.name} src={row.avatarUrl} /> */}
             {row.name}
           </Box>
         </TableCell>
