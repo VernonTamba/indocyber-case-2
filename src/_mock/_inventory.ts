@@ -4,7 +4,7 @@ export const initialInventory = [
     item: 'Aren Sugar',
     quantity: 0,
     uom: 'kg',
-    price: 60000,
+    price: 60,
     label: '15 g of aren sugar:',
   },
   {
@@ -12,7 +12,7 @@ export const initialInventory = [
     item: 'Milk',
     quantity: 0,
     uom: 'Liter',
-    price: 30000,
+    price: 30,
     label: '150 ml of milk:',
   },
   {
@@ -20,7 +20,7 @@ export const initialInventory = [
     item: 'Ice Cube',
     quantity: 0,
     uom: 'Kg',
-    price: 15000,
+    price: 15,
     label: '20 g of ice cube:',
   },
   {
@@ -36,7 +36,7 @@ export const initialInventory = [
     item: 'Coffee Bean',
     quantity: 0,
     uom: 'kg',
-    price: 100000,
+    price: 100,
     label: '20 g of coffee bean:',
   },
   {
@@ -44,7 +44,7 @@ export const initialInventory = [
     item: 'Mineral Water',
     quantity: 0,
     uom: 'Liter',
-    price: 5000,
+    price: 5,
     label: '50 ml of mineral water:',
   },
 ];
